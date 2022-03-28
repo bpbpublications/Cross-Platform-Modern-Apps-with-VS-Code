@@ -1,0 +1,18 @@
+﻿@page "/"
+@inject TooltipService tooltipService
+@using Radzen
+
+        <h3>ProgressBar in indeterminate mode</h3>
+        <RadzenProgressBar Value="100" ShowValue="false" Mode="ProgressBarMode.Indeterminate" Style="margin-bottom: 20px" />
+        <br />
+
+        <h3 style="margin-top: 20px;">Show tooltip with bottom position</h3>
+            <RadzenButton Text="Show tooltip" MouseEnter="@(args => ShowTooltip(args,
+                                                       new TooltipOptions(){ Position = TooltipPosition.Bottom }))" />
+
+    @code {
+    ElementReference htmlButton;
+    RadzenButton radzenButton;
+
+    void ShowTooltip(ElementReference elementReference, TooltipOptions options = null) => tooltipService.Open(elementReference, "Some content", options);
+    }

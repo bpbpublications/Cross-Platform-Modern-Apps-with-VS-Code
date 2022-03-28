@@ -1,0 +1,22 @@
+﻿@page "/"
+
+  <Dropdown>
+    <Button>Split Dropdown</Button>
+    <DropdownToggle Split="true"/>
+    <DropdownMenu>
+        <DropdownItem>Action</DropdownItem>
+        <DropdownDivider />
+        <DropdownItem>Another Action</DropdownItem>
+    </DropdownMenu>
+</Dropdown>
+
+<Switch TValue="bool">Remember me</Switch>
+
+<Button Clicked="@OnButtonClicked">Click me</Button>
+
+@code{
+  void OnButtonClicked()
+  {
+      Console.WriteLine( "Hello world!" );
+  }
+}

@@ -1,0 +1,5 @@
+{
+    "razor.devmode": true,
+    "razor.disabled": true,
+    "razor.languageServer.debug": true
+}

@@ -1,0 +1,43 @@
+@{
+    if (IsPost) {
+        string studentName = Request.Form["StudentName"];
+        int studentAge = Request.Form["StudentAge"];
+        string studentSubject = Request.Form["StudentSubject"].AsInt();
+
+        <text>
+          You entered: <br />
+          Student Name: @studentName <br />
+          Student Age: @studentAge <br />
+          Student Subject: @studentSubject <br />
+        </text>
+    }
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer Form</title>
+    </head>
+    <body>
+      <form method="post" >
+        <fieldset>
+          <legend>Add Customer</legend>
+          <div>
+            <label for="StudentName">Student Name:</label>
+            <input type="text" name="StudentName" value="" />
+          </div>
+          <div>
+            <label for="StudentAge">Student Age:</label>
+            <input type="text" name="StudentAge" value="" />
+          </div>
+          <div>
+            <label for="StudentSubject">Student Subject:</label>
+            <input type="text" name="StudentSubject" value="" />
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+          </div>
+        </fieldset>
+      </form>
+    </body>
+</html>
